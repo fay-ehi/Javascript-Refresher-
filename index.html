@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Week 1 Deliverable: Javascript Refresher</h1>
+    <p>Open the console to see the output.</p>
+
+    <h2>Array Implementation</h2>
+    <ul id="fruitsList"></ul>
+
+    <script>
+      const fruits = ["Apple", "Banana", "Mango", "Orange"];
+      let numbers = [4, 9, 16, 25, 29];
+
+      fruits.forEach((fruit) => console.log("Fruit:", fruit));
+
+      const upperFruits = fruits.map((fruit) => fruit.toUpperCase());
+      console.log("Uppercase Fruits:", upperFruits);
+
+      const longNames = fruits.filter((fruit) => fruit.length > 5);
+      console.log("Fruits with names > 5 letters:", longNames);
+
+      const total = numbers.reduce((sum, num) => sum + num, 0);
+      console.log("Sum of numbers:", total);
+
+      const person = { firstName: "John", lastName: "Doe", age: 25 };
+      let { firstName, age } = person;
+      console.log(`Person: ${firstName}, Age: ${age}`);
+
+      const moreFruits = [...fruits, "Grapes", "Pineapple"];
+      console.log("All Fruits:", moreFruits);
+
+      const list = document.getElementById("fruitsList");
+      fruits.forEach((fruit) => {
+        const li = document.createElement("li");
+        li.textContent = fruit;
+        list.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
